@@ -2,26 +2,27 @@ import { ApiProperty } from "@nestjs/swagger";
 import { IsDate, IsNumber, IsString } from "class-validator";
 
 export class UpdateUserDto {
-    @ApiProperty({example:"bekzod",description:"User name"})
+    @ApiProperty({ example: "bekzod", description: "User name" })
     @IsString()
-    name: string;
+    FirstName: string;
 
-    @ApiProperty({example:"xaydarov",description:"User sername"})
+    @ApiProperty({ example: "xaydarov", description: "User lastname" })
     @IsString()
-    lastname: string;
+    LastName: string;
 
-    @ApiProperty({example:13,description:"User name"})
+    @ApiProperty({ example: "+998990072778", description: "User phone" })
+    @IsString()
+    phone: string;
+
+    @ApiProperty({ example: "13", description: "User age" })
     @IsNumber()
     age: number;
 
-    @ApiProperty({example:"11.10.2024",description:"User name"})
-    @IsDate()
-    birth_day: string;
-    @ApiProperty({example:"+99899003344",description:"User phone"})
+    @ApiProperty({ example: "subject", description: "User subject" })
     @IsString()
-    phone: string;
-    
-    @ApiProperty({example:"xaydarov",description:"User lastname"})
+    subject: string
+
+    @ApiProperty({ example: "Namangan Shahar", description: "User address" })
     @IsString()
-    password: string;
+    address: string
 }
